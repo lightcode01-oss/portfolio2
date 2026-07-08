@@ -1,16 +1,13 @@
 import { motion } from "framer-motion";
-import { Code2, User, Globe } from "lucide-react";
+import { TrendingUp, BarChart3, Briefcase } from "lucide-react";
 import { useEffect } from "react";
 
 export default function WelcomeScreen() {
-  const icons = [Code2, User, Globe];
+  const icons = [TrendingUp, BarChart3, Briefcase];
 
   useEffect(() => {
-    // scroll band
     document.body.style.overflow = "hidden";
-
     return () => {
-      // welcome screen hatne ke baad scroll wapas
       document.body.style.overflow = "auto";
     };
   }, []);
@@ -27,12 +24,11 @@ export default function WelcomeScreen() {
           ease: [0.22, 1, 0.36, 1],
         },
       }}
-      className="fixed inset-0 z-[99999] flex items-center justify-center bg-black overflow-hidden p-5"
+      className="fixed inset-0 z-[99999] flex items-center justify-center bg-[#05070A] overflow-hidden p-5"
     >
-      {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[420px] h-[420px] bg-white/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-150px] right-[-80px] w-[300px] h-[300px] bg-white/5 blur-[100px] rounded-full" />
+        <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[420px] h-[420px] bg-[#00BFFF]/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-150px] right-[-80px] w-[300px] h-[300px] bg-[#D4AF37]/5 blur-[100px] rounded-full" />
       </div>
 
       <motion.div
@@ -44,7 +40,6 @@ export default function WelcomeScreen() {
         }}
         className="relative text-center text-white flex flex-col items-center gap-5 w-full max-w-[340px]"
       >
-        {/* Icons */}
         <motion.div
           initial="hidden"
           animate="visible"
@@ -82,14 +77,13 @@ export default function WelcomeScreen() {
               whileHover={{
                 scale: 1.08,
               }}
-              className="w-[48px] h-[48px] rounded-full border border-white/10 flex items-center justify-center bg-white/5 backdrop-blur-md shadow-[0_0_25px_rgba(255,255,255,0.05)]"
+              className="w-[48px] h-[48px] rounded-full border border-white/10 flex items-center justify-center bg-white/5 backdrop-blur-md shadow-[0_0_25px_rgba(0,191,255,0.05)]"
             >
               <Icon size={20} color="white" />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Text */}
         <div className="flex flex-col items-center gap-1">
           <div className="flex items-center justify-center gap-2 flex-wrap">
             <motion.span
@@ -129,11 +123,10 @@ export default function WelcomeScreen() {
             }}
             className="text-[clamp(24px,6vw,38px)] font-black tracking-tight leading-tight text-center"
           >
-            Portfolio Website
+            Finance Portfolio
           </motion.h1>
         </div>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.7 }}
@@ -143,10 +136,9 @@ export default function WelcomeScreen() {
           }}
           className="text-sm text-white/60 tracking-wide"
         >
-          Creating Websites That Feel Alive.
+          Leading with Insight, Driving with Data.
         </motion.p>
 
-        {/* Website Badge */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -154,7 +146,7 @@ export default function WelcomeScreen() {
             delay: 2,
             duration: 0.5,
           }}
-          className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs tracking-[0.25em] text-white/70 shadow-[0_0_30px_rgba(255,255,255,0.04)] overflow-hidden"
+          className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs tracking-[0.25em] text-white/70 shadow-[0_0_30px_rgba(0,191,255,0.04)] overflow-hidden"
         >
           <motion.span
             initial={{ width: "0ch" }}
@@ -166,7 +158,7 @@ export default function WelcomeScreen() {
             }}
             className="inline-block overflow-hidden whitespace-nowrap"
           >
-            www.webkaizen.in
+            abhishekpanda.com
           </motion.span>
 
           <motion.span
@@ -183,7 +175,6 @@ export default function WelcomeScreen() {
           </motion.span>
         </motion.div>
 
-        {/* Bottom Loading Line */}
         <div className="mt-10 w-[240px] bg-white/20 h-[2px] overflow-hidden rounded-full">
           <motion.div
             initial={{ width: "10%" }}
@@ -192,7 +183,7 @@ export default function WelcomeScreen() {
               duration: 6.5,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="h-full bg-white"
+            className="h-full bg-gradient-to-r from-[#00BFFF] via-[#37D5FF] to-[#D4AF37]"
           />
         </div>
       </motion.div>
