@@ -220,10 +220,9 @@ function ExpertiseGrid() {
           const depth = (p.z + 1) / 2;
           const opacity = 0.3 + depth * 0.7;
           const scale = 0.5 + depth * 0.5 + b * 0.45;
-          el.style.cssText =
-            `position:absolute;left:${210 + x - 36}px;top:${210 + y - 36}px;` +
-            `opacity:${opacity};transform:scale(${scale});z-index:${idx};` +
-            `width:72px;height:72px;`;
+          el.style.transform = `translate3d(${210 + x - 36}px,${210 + y - 36}px,0) scale(${scale})`;
+          el.style.opacity = String(opacity);
+          el.style.zIndex = String(idx);
         });
 
       if (flashEl.current) {
@@ -273,7 +272,7 @@ function ExpertiseGrid() {
             <div
               key={tech.name}
               ref={(el) => { if (el) itemEls.current[i] = el; }}
-              style={{ position: "absolute", width: 72, height: 72 }}
+              style={{ position: "absolute", width: 72, height: 72, willChange: "transform, opacity" }}
             >
               <div
                 className="w-full h-full rounded-[18px] flex flex-col items-center justify-center gap-1"
